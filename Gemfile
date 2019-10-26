@@ -35,8 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # For simpler forms
 gem 'simple_form'
-# For better error page
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
+
 # modern CSS framework
 gem "bulma-rails", "~> 0.7.5"
 
@@ -47,6 +46,8 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.8'
+  # For better error page
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
 end
 
 group :development do
