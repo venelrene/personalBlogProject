@@ -1,1 +1,26 @@
 <h1 class="title">This is index page</h1>
+
+<section class="section">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="https://placeimg.com/320/260/any" alt="Placeholder image">
+        </figure>
+      </div>
+
+      <div class="card-content">
+        <div class="media-content">
+          <p class="title is-4"><%= link_to post.title, post %></p>
+        </div>
+      </div>
+
+      <div class="content">
+        <%= post.title %>
+        <br>
+        <time datetime="2016-1-1"><%= post.created_at.strftime("%b %d, %Y") %> </time>
+      </div>
+
+    <% end %>
+  </div>
+</section>

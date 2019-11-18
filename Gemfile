@@ -46,6 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing'
   # For better error page
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
 end
