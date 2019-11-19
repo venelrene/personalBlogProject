@@ -6,7 +6,7 @@ RSpec.describe PostsController, type: :controller do
       get :index
     end
 
-    let(:post) { Post.create(title: "Test title", content: "Test content", image: "Test image") }
+    let(:post) { create :post }
 
     it "returns a successful response" do
       expect(response).to be_successful
@@ -26,7 +26,7 @@ RSpec.describe PostsController, type: :controller do
       get :show, params: { id: post.id }
     end
 
-    let(:post) { Post.create(title: "Test title", content: "Test content", image: "Test image") }
+    let(:post) { create :post }
 
     it "returns a successful response" do
       expect(response).to be_successful

@@ -47,6 +47,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.8'
   gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
   # For better error page
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
 end
