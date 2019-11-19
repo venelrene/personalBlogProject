@@ -13,7 +13,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "assigns @posts" do
-      post = Post.create(title: "Test title", content: "Test content", image: "Test image")
       expect(assigns(:posts)).to eq([post])
     end
 
