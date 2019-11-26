@@ -36,4 +36,14 @@ RSpec.describe PostsController, type: :controller do
       expect(response).to render_template("show")
     end
   end
+
+  describe "POST #create", type: :request do
+
+    let(:post) { create :post }
+
+    it "should create new post" do
+      expect {create(:post)}.to change {Post.count}.by(1)
+      expect(response).to be_successful
+    end
+  end
 end
