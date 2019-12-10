@@ -50,6 +50,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   # For better error page
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  # For code coverage
+  gem 'simplecov', require: false
 end
 
 group :development do
