@@ -35,16 +35,16 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  describe "#create", type: :request do
+  describe "#create" do
     before do
       @post = create :post
-      get "/posts/#{@post.id}"
+      get :show, params: { id: @post.id }
     end
-    
+
     it "should create new post" do
       expect { create(:post) }.to change { Post.count }.by(1)
       expect(response).to be_successful
-      expect(response).to render_template("posts/show")
+      expect(response).to render_template("show")
     end
 
     context "with invalid attributes" do
@@ -52,7 +52,7 @@ RSpec.describe PostsController, type: :controller do
 
       it "denies access to posts#create" do
         expect {
-          post '/posts', params: { post: post_params }
+          post :create, params: { post: post_params }
         }.to_not change(Post, :count)
         expect(response).to render_template("new")
       end
