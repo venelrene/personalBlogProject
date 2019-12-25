@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :post do
-    title { "Test title" }
-    content { "Test content" }
-    image { "Test image" }
+    title { Faker::Team.name }
+    content { Faker::Lorem.paragraph  }
+    image { Faker::Avatar.image }
 
     trait :invalid do
-      title { "Test title" }
+      title { nil }
     end
   end
 end

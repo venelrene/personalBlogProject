@@ -13,7 +13,7 @@ RSpec.describe Post, type: :model do
     )
     expect(post).to be_valid
   end
-
+  it { is_expected.to validate_uniqueness_of :title }
   it { is_expected.to validate_presence_of :title }
   it { is_expected.to validate_presence_of :content }
 end

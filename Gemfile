@@ -49,6 +49,7 @@ group :development, :test do
   # For code coverage
   gem 'simplecov', require: false
   gem 'annotate'
+  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 end
 
 group :development do
@@ -62,7 +63,6 @@ group :development do
   gem 'guard'
 	# LiveReload guard allows to automatically reload your browser when 'view' files are modified.
   gem 'guard-livereload', '~> 2.5', require: false
-  gem 'faker', require: false # for sample data in development
 end
 
 
