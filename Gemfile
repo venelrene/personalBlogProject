@@ -42,16 +42,13 @@ gem "bulma-rails", "~> 0.7.5"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.8'
-  gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   # For better error page
   gem 'better_errors', '~> 2.5', '>= 2.5.1'
   # For code coverage
   gem 'simplecov', require: false
+  gem 'annotate'
 end
 
 group :development do
@@ -65,7 +62,16 @@ group :development do
   gem 'guard'
 	# LiveReload guard allows to automatically reload your browser when 'view' files are modified.
   gem 'guard-livereload', '~> 2.5', require: false
+  gem 'faker', require: false # for sample data in development
 end
 
+
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

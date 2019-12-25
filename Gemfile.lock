@@ -40,6 +40,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    annotate (3.0.3)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 14.0)
     arel (8.0.0)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
@@ -82,6 +85,8 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    faker (2.9.0)
+      i18n (>= 1.6, < 1.8)
     ffi (1.9.25)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -205,6 +210,8 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     shellany (0.0.1)
+    shoulda-matchers (4.1.2)
+      activesupport (>= 4.2.0)
     simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -251,12 +258,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   better_errors (~> 2.5, >= 2.5.1)
   bulma-rails (~> 0.7.5)
   byebug
-  capybara (~> 2.13)
+  capybara
   coffee-rails (~> 4.2)
   factory_bot_rails
+  faker
   guard
   guard-livereload (~> 2.5)
   jbuilder (~> 2.5)
@@ -267,6 +276,7 @@ DEPENDENCIES
   rspec-rails (~> 3.8)
   sass-rails (~> 5.0)
   selenium-webdriver
+  shoulda-matchers
   simple_form
   simplecov
   spring
