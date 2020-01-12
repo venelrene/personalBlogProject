@@ -40,7 +40,6 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe '#create' do
-
     context 'with valid attributes' do
       before do
         @post = create :post
