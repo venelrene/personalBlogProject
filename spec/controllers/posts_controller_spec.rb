@@ -26,6 +26,10 @@ RSpec.describe PostsController, type: :controller do
       get :show, params: { id: @post.id }
     end
 
+    it 'locates the requested @post' do
+      expect(assigns(:post)).to eq(@post)
+    end
+
     it 'returns a successful response' do
       expect(response).to be_successful
     end
@@ -79,7 +83,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it 'locates the requested @post' do
-        assigns(:post).should eq(@post)
+        expect(assigns(:post)).to eq(@post)
       end
 
       it 'should update post attribute' do
@@ -99,7 +103,7 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it 'locates the requested @post' do
-        assigns(:post).should eq(@post)
+        expect(assigns(:post)).to eq(@post)
       end
 
       it 'does not change @post attribute' do
@@ -120,13 +124,18 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-  xdescribe '#destroy', type: :request do
-
+  describe '#destroy' do
     let(:post) { create :post }
 
-    it 'should destroy post' do
-      expect {delete(:post)}.to change {Post.count}.by(1)
-      expect(response).to be_successful
+    it 'deletes a post' do
+      expect {
+        delete :destroy, params: { id: post.id }
+      }.to change { Post.count }.by(-1)
+    end
+
+    it 'redirects to the index' do
+      delete :destroy, params: { id: post.id }
+      expect(response).to redirect_to posts_path
     end
   end
 end
