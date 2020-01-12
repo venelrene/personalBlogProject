@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: [:show, :edit, :destroy]
+  before_action :find_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.all.order('created_at DESC')
   end
 
   def new
@@ -14,17 +14,16 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post  }
-        format.json { render :show, status: :created, location: @post  }
+        format.html { redirect_to @post }
+        format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
-        format.json { render json: @post .errors, status: :unprocessable_entity}
+        format.json { render json: @post .errors, status: :unprocessable_entity }
       end
     end
   end
 
-  def show
-  end
+  def show; end
 
   def update
     if @post.update(post_params)
@@ -34,8 +33,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def destroy
     @post.destroy
